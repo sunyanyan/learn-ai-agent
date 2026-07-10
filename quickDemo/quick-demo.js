@@ -14,6 +14,8 @@ import OpenAI from 'openai';
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import crypto from 'node:crypto';
+
 
 // ─── 初始化 ───────────────────────────────────────────────────────────────
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -762,7 +764,7 @@ async function example10_errorHandling() {
     console.log(result2.ok ? "AI: " + result2.output : "Error: " + result2.output);
 }
 
-import crypto from 'node:crypto';
+
 
 // ─── 主函数 ──────────────────────────────────────────────────────────────────
 async function main() {
