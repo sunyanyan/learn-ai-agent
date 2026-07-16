@@ -1,0 +1,33 @@
+{
+  "name": "helloagent-js",
+  "version": "0.2.9",
+  "description": "灵活、可扩展的多智能体框架 - JavaScript版本，基于OpenAI原生API",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./core": "./src/core/index.js",
+    "./agents": "./src/agents/index.js",
+    "./tools": "./src/tools/index.js"
+  },
+  "scripts": {
+    "start": "node examples/basic_setup.js",
+    "test": "node --test"
+  },
+  "keywords": [
+    "agent",
+    "ai",
+    "llm",
+    "openai",
+    "multi-agent",
+    "framework"
+  ],
+  "author": "HelloAgents Team",
+  "license": "CC-BY-NC-SA-4.0",
+  "dependencies": {
+    "openai": "^4.67.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -9,3 +9,6 @@ node-llama-docs
 
 frontend*
 VIDEO_SCRIPT.md
+
+helloagent-js/node_modules
+helloagent-js/.env

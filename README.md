@@ -1,12 +1,9 @@
 # 从零开始学习AI Agent
 
-## 概念解释
-
-
-* [三种范式的概念和优缺点 （ReAct、Plan-and-Solve、Reflection）](./context/three-paradigm.md)
-
 
 ## 快速上手demo（带说明）
+
+* [三种范式的概念和优缺点 （ReAct、Plan-and-Solve、Reflection）](./context/three-paradigm.md)
 
 ### 基础概念与渐进式示例
 
@@ -31,3 +28,6 @@ LangGraph 将智能体的执行流程建模为一种状态机（State Machine）
 #### LangGraph搭建的智能问答助手
 
 *  [LangGraph核心概念和智能问答助手实现](./langgraph-js/Dialogue_System-context.md)
+
+## 自己构建Agent框架
+
