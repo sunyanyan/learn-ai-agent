@@ -73,11 +73,11 @@ async function streamDemo(agent) {
 }
 
 async function main() {
-  const agent = await simpleAgentDemo();
-  await reactAgentDemo();
-  await reflectionAgentDemo();
+  // const agent = await simpleAgentDemo();
+  // await reactAgentDemo();
+  // await reflectionAgentDemo();
   await planAndSolveAgentDemo();
-  await streamDemo(agent);
+  // await streamDemo(agent);
 }
 
 main().catch(console.error);

@@ -8,7 +8,8 @@
     ".": "./src/index.js",
     "./core": "./src/core/index.js",
     "./agents": "./src/agents/index.js",
-    "./tools": "./src/tools/index.js"
+    "./tools": "./src/tools/index.js",
+    "./context": "./src/context/index.js"
   },
   "scripts": {
     "start": "node examples/basic_setup.js",
@@ -25,6 +26,7 @@
   "author": "HelloAgents Team",
   "license": "CC-BY-NC-SA-4.0",
   "dependencies": {
+    "dotenv": "^17.4.2",
     "openai": "^4.67.0"
   },
   "engines": {

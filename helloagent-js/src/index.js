@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import { __version__, __author__, __email__, __description__ } from './version.js';
 
 export { __version__, __author__, __email__, __description__ };
@@ -14,6 +15,8 @@ export { Tool, ToolParameter, ToolRegistry, globalRegistry,
   SearchTool, search, searchTavily, searchSerpapi, searchHybrid,
   CalculatorTool, calculate,
   NoteTool, TerminalTool } from './tools/index.js';
+
+export { ContextBuilder, ContextConfig, ContextPacket, countTokens } from './context/index.js';
 
 export { setupLogger, getLogger, serializeObject, deserializeObject,
   saveToFile, loadFromFile, formatTime, validateConfig, safeImport,

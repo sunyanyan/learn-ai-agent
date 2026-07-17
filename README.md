@@ -1,4 +1,4 @@
-# 从零开始学习AI Agent
+# AI Agent学习实践
 
 
 ## 快速上手demo（带说明）
@@ -31,3 +31,7 @@ LangGraph 将智能体的执行流程建模为一种状态机（State Machine）
 
 ## 自己构建Agent框架
 
+在 helloagent-js 目录下
+
+* [上下文工程概念](./context/context-engineering.md)
+    * [上下文工程例子-使用 ContextBuilder 的 GSSC 流水线（Gather-Select-Structure-Compress）](./helloagent-js/example/contextBuilder_use.js) 
