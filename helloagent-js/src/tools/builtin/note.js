@@ -278,4 +278,68 @@ export class NoteTool extends Tool {
     result += `创建时间: ${note.createdAt}\n更新时间: ${note.updatedAt}\n\n内容:\n${note.content}\n`;
     return result;
   }
+
+  /**
+   * 获取单个笔记的结构化对象
+   * @param {string} noteId - 笔记ID
+   * @returns {Promise<Object|null>} 笔记对象（含 id/title/type/tags/createdAt/updatedAt/content），不存在时返回 null
+   */
+  async getAsObject(noteId) {
+    await this._ensureInit();
+    if (!noteId) return null;
+    try {
+      const md = await fs.readFile(this._getNotePath(noteId), 'utf-8');
+      return this._markdownToNote(md);
+    } catch {
+      return null;
+    }
+  }
+
+  /**
+   * 以结构化对象列表的形式获取笔记（便于程序构造上下文包等用途）
+   * @param {Object} [opts]
+   * @param {string} [opts.noteType] - 按类型过滤
+   * @param {number} [opts.limit=10] - 返回结果数量限制
+   * @returns {Promise<Array<Object>>}
+   */
+  async listAsObjects({ noteType = null, limit = 10 } = {}) {
+    await this._ensureInit();
+    let notesIdx = this.notesIndex.notes;
+    if (noteType) notesIdx = notesIdx.filter(n => n.type === noteType);
+    notesIdx = notesIdx.slice(0, limit);
+
+    const result = [];
+    for (const idx of notesIdx) {
+      const full = await this.getAsObject(idx.id);
+      if (full) result.push(full);
+    }
+    return result;
+  }
+
+  /**
+   * 以结构化对象列表的形式搜索笔记
+   * @param {Object} opts
+   * @param {string} opts.query - 搜索关键词
+   * @param {string} [opts.noteType] - 按类型过滤（可选）
+   * @param {number} [opts.limit=10] - 返回结果数量限制
+   * @returns {Promise<Array<Object>>}
+   */
+  async searchAsObjects({ query, noteType = null, limit = 10 } = {}) {
+    await this._ensureInit();
+    if (!query) return [];
+    const qLower = query.toLowerCase();
+    let notesIdx = this.notesIndex.notes;
+    if (noteType) notesIdx = notesIdx.filter(n => n.type === noteType);
+
+    const matched = [];
+    for (const idx of notesIdx) {
+      const full = await this.getAsObject(idx.id);
+      if (!full) continue;
+      const inTitle = (full.title || '').toLowerCase().includes(qLower);
+      const inContent = (full.content || '').toLowerCase().includes(qLower);
+      const inTags = (full.tags || []).some(t => t.toLowerCase().includes(qLower));
+      if (inTitle || inContent || inTags) matched.push(full);
+    }
+    return matched.slice(0, limit);
+  }
 }
