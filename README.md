@@ -1,7 +1,7 @@
 # AI Agent学习实践
 
 
-## 1. 快速上手demo（带说明）
+## 1. 快速上手demo和概念
 
 简单说明相关范式概念和代码。
 
@@ -9,7 +9,7 @@
 
 ### 1.1 基础概念与渐进式示例
 
-基础代码来自： https://github.com/pguso/ai-agents-from-scratch，在这里做了整合和精简。
+基础代码来自： https://github.com/pguso/ai-agents-from-scratch   在这里做了整合和精简。
 
 * [quick-demo-context.md](./quickDemo/quick-demo-context.md) 中为相关概念。
 * [quick-demo.js](./quickDemo/quick-demo.js) 中为agent每个小步骤的示例js代码。
@@ -44,7 +44,12 @@ LangGraph 将智能体的执行流程建模为一种状态机（State Machine）
 * [GSSC](./context/context-engineering-GSSC.md) GSSC流水线 设计思路
 * [contextBuilder_use.js](./helloagent-js/examples/contextBuilder_use.js) ： 上下文工程例子-使用 ContextBuilder 的 GSSC 流水线 
 
-### 3.1.2 结构化笔记
+#### 3.1.2 结构化笔记
 
 * [notebook](./context/context-engineering-notebook.md) 结构化笔记 设计思路
-* [noteTool_use.js](./helloagent-js/examples/noteTool_use.js) ： 结构化笔记例子 - NoteTool 基础使用 + 与 ContextBuilder 集成（对应第九章 9.4 节）
+* [noteTool_use.js](./helloagent-js/examples/noteTool_use.js) ： 结构化笔记例子 - NoteTool 基础使用 + 与 ContextBuilder 集成
+
+#### 3.1.3 即时文件系统访问
+
+* [terminalTool](./context/context-engineering-terminalTool.md) 即时文件系统访问 设计思路
+* [terminalTool_use.js](./helloagent-js/examples/terminalTool_use.js) ： 即时文件系统访问例子 - terminalTool 基础使用 + 与 ContextBuilder 集成
