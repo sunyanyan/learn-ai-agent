@@ -53,3 +53,13 @@ LangGraph 将智能体的执行流程建模为一种状态机（State Machine）
 
 * [terminalTool](./context/context-engineering-terminalTool.md) 即时文件系统访问 设计思路
 * [terminalTool_use.js](./helloagent-js/examples/terminalTool_use.js) ： 即时文件系统访问例子 - terminalTool 基础使用 + 与 ContextBuilder 集成
+
+### 3.2 协议
+
+
+为框架引入三种通信协议：MCP（Model Context Protocol）用于智能体与工具的标准化通信，A2A（Agent-to-Agent Protocol）用于智能体间的点对点协作
+
+#### 3.2.1 mcp
+
+* [mcp](./context/mcp.md) MCP 协议概念介绍
+* [mcp_doc_assistant.js](./helloagent-js/examples/mcp_doc_assistant.js) ： mcp 集成使用例子

@@ -6,3 +6,4 @@ export { SearchTool, search, searchTavily, searchSerpapi, searchHybrid } from '.
 export { CalculatorTool, calculate } from './builtin/calculator.js';
 export { NoteTool } from './builtin/note.js';
 export { TerminalTool } from './builtin/terminal.js';
+export { MCPTool, MCPWrappedTool } from './builtin/mcp_tool.js';

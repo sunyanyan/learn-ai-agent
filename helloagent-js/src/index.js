@@ -14,10 +14,14 @@ export { Tool, ToolParameter, ToolRegistry, globalRegistry,
   AsyncToolExecutor, runParallelTools, runBatchTool,
   SearchTool, search, searchTavily, searchSerpapi, searchHybrid,
   CalculatorTool, calculate,
-  NoteTool, TerminalTool } from './tools/index.js';
+  NoteTool, TerminalTool,
+  MCPTool, MCPWrappedTool } from './tools/index.js';
 
 export { ContextBuilder, ContextConfig, ContextPacket, countTokens } from './context/index.js';
 
 export { setupLogger, getLogger, serializeObject, deserializeObject,
   saveToFile, loadFromFile, formatTime, validateConfig, safeImport,
   ensureDir, getProjectRoot, mergeObjects } from './utils/index.js';
+
+export { MCPClient, MCPServer, MCPServerBuilder, createExampleServer,
+  createContext, parseContext, createErrorResponse, createSuccessResponse } from './protocols/index.js';
