@@ -63,3 +63,4 @@ LangGraph 将智能体的执行流程建模为一种状态机（State Machine）
 
 * [mcp](./context/mcp.md) MCP 协议概念介绍
 * [mcp_doc_assistant.js](./helloagent-js/examples/mcp_doc_assistant.js) ： mcp 集成使用例子
+* [weather_mcp_agent.js](./helloagent-js/examples/weather_mcp_agent.js) 在Agent中使用自己构建的天气MCP服务器
